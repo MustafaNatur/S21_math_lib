@@ -41,7 +41,7 @@ int s21_abs(int x) { return (int)s21_fabs(x); }
 
 long double s21_fabs(double x) {
   if (x < 0) {
-    x = !x;
+    x *= -1;
   }
   return x;
 }
