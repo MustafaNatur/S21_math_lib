@@ -4,7 +4,7 @@
 long double s21_fabs(double x) { return (x > 0) ? x: -x; };
 int s21_abs(int x) { return (int)s21_fabs(x); }
 
-long double s21_cos(double x);
+long double s21_cos(double x); 
 long double s21_acos(double x);
 long double s21_sin(double x);
 long double s21_asin(double x);
