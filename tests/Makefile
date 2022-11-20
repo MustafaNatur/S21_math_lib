@@ -7,7 +7,7 @@ CHECKFLAGS=$(shell pkg-config --cflags --libs check)
 all: build_all_tests
 
 build_all_tests:
-	$(CC) $(FLAGS) $(CHECKFLAGS) s21_test_abs.c
+	$(CC) $(FLAGS) $(CHECKFLAGS) s21_test_abs.c -L. -lmath -o s21_test_abs
 	
 clean:
 	rm -rf *.o

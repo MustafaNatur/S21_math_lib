@@ -7,9 +7,9 @@ START_TEST(test_s21_math_abs_usual) {
   int testValue1 = -5;
   int testValue2 = 5;
   int testValue3 = 0;
-  ck_assert_int_eq(abs(testValue1), abs(testValue1));
-  ck_assert_int_eq(abs(testValue2), abs(testValue2));
-  ck_assert_int_eq(abs(testValue3), abs(testValue3));
+  ck_assert_int_eq(s21_abs(testValue1), s21_abs(testValue1));
+  ck_assert_int_eq(s21_abs(testValue2), s21_abs(testValue2));
+  ck_assert_int_eq(s21_abs(testValue3), s21_abs(testValue3));
 }
 END_TEST
 
@@ -17,9 +17,9 @@ START_TEST(test_s21_math_abs_unusual) {
   int testValue1 = -10;
   int testValue2 = 10;
   int testValue3 = 0;
-  ck_assert_int_eq(abs(testValue1), abs(testValue1));
-  ck_assert_int_eq(abs(testValue2), abs(testValue2));
-  ck_assert_int_eq(abs(testValue3), abs(testValue3));
+  ck_assert_int_eq(s21_abs(testValue1), s21_abs(testValue1));
+  ck_assert_int_eq(s21_abs(testValue2), s21_abs(testValue2));
+  ck_assert_int_eq(s21_abs(testValue3), s21_abs(testValue3));
 }
 END_TEST
 
