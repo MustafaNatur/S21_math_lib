@@ -1,7 +1,5 @@
 #include "s21_math.h"
 
-#include "s21_math.h"
-
 /*   Yn+1 = Yn + 2 * (X - exp(Yn)) / (X + exp(Yn))   */
 
 long double s21_log(double x) {
