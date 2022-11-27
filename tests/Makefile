@@ -6,13 +6,17 @@ GCOVFLAGS=-fprofile-arcs -ftest-coverage
 CHECKFLAGS=$(shell pkg-config --cflags --libs check)
 GLFLAGS=-lgcov --coverage
 
-all: build_all_tests
+all: build_abs_tests build_fabs_tests
 
-build_all_tests:
+build_abs_tests:
 	$(CC) $(FLAGS) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) s21_test_abs.c s21_math.a -L. -o s21_test_abs
 	./s21_test_abs
 	gcov s21_test_abs.c
 
+build_fabs_tests:
+	$(CC) $(FLAGS) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) s21_test_fabs.c s21_math.a -L. -o s21_test_fabs
+	./s21_test_fabs
+	gcov s21_test_fabs.c
 
 clean:
 	rm -rf *.o

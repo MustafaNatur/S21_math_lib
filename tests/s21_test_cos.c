@@ -1,10 +1,10 @@
-#include "math.h"
-#include "s21_math.h"
 #include <check.h>
 #include <stdlib.h>
 
-START_TEST(test_s21_math_cos_usual) {
+#include "math.h"
+#include "s21_math.h"
 
+START_TEST(test_s21_math_cos_usual) {
   ck_assert_ldouble_eq(s21_cos(testValue1), cos(testValue1));
   ck_assert_ldouble_eq(s21_cos(testValue2), cos(testValue2));
   ck_assert_ldouble_eq(s21_cos(testValue3), cos(testValue3));

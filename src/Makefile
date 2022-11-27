@@ -15,12 +15,12 @@ build_object_files:
 build_library:
 	ar rcs $(LIBNAME) $(FUNC_FILES_O)
 
-s21_math: s21_math.c 
-	gcc $(FLAG) s21_math.c -o s21_math
-clean:
-	rm -f *.o 
+copy_lib_to_tests:
+	cp $(LIBNAME) ../tests
 
-rebuild: 
-	make clean
-	make s21_math
-	make clean
+clean:
+	rm -rf *.o
+	rm -rf *.gcno
+	rm -rf *.gcov
+	rm -rf *.gcda
+	rm -rf *.a 
