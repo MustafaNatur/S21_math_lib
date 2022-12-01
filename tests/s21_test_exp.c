@@ -15,8 +15,8 @@ START_TEST(test_s21_math_exp_usual) {
 END_TEST
 
 START_TEST(test_s21_math_exp_unusual) {
-  double testValue1 = 100.4353425;
-  double testValue2 = -100.4353425;
+  double testValue1 = 24.4353425;
+  double testValue2 = -24.4353425;
   double testValue3 = 0.0;
   ck_assert_ldouble_eq(s21_exp(testValue1), exp(testValue1));
   ck_assert_ldouble_eq(s21_exp(testValue2), exp(testValue2));

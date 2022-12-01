@@ -5,19 +5,19 @@
 #include "s21_math.h"
 
 START_TEST(test_s21_math_sqrt_usual) {
-  long double testValue1 = 256;
-  long double testValue2 = 9;
-  long double testValue3 = 0;
-  ck_assert_ldouble_eq(s21_sqrt(testValue1), sqrt(testValue1));
-  ck_assert_ldouble_eq(s21_sqrt(testValue2), sqrt(testValue2));
-  ck_assert_ldouble_eq(s21_sqrt(testValue3), sqrt(testValue3));
+  double testValue1 = 256;
+  double testValue2 = 25;
+  double testValue3 = 0;
+  ck_assert_int_eq(s21_sqrt(testValue1), sqrt(testValue1));
+  ck_assert_int_eq(s21_sqrt(testValue2), sqrt(testValue2));
+  ck_assert_int_eq(s21_sqrt(testValue3), sqrt(testValue3));
 }
 END_TEST
 
 START_TEST(test_s21_math_sqrt_unusual) {
-  long double testValue1 = -1;
-  long double testValue2 = 1e100;
-  long double testValue3 = 1.44;
+  double testValue1 = -1;
+  double testValue2 = 1e100;
+  double testValue3 = 1.44;
   ck_assert_ldouble_eq(s21_sqrt(testValue1), sqrt(testValue1));
   ck_assert_ldouble_eq(s21_sqrt(testValue2), sqrt(testValue2));
   ck_assert_ldouble_eq(s21_sqrt(testValue3), sqrt(testValue3));
@@ -43,7 +43,7 @@ Suite *s21_math_sqrt_suite() {
 
 int main() {
   Suite *s;
-  long double failed = 0;
+  int failed = 0;
   SRunner *runner;
 
   s = s21_math_sqrt_suite();

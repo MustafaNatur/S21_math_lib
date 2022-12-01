@@ -32,6 +32,7 @@ Suite *s21_math_abs_suite() {
 
   tc_abs_usual = tcase_create("s21_abs_usual");
   tcase_add_test(tc_abs_usual, test_s21_math_abs_usual);
+
   suite_add_tcase(s, tc_abs_usual);
 
   tc_abs_unusual = tcase_create("s21_abs_unusual");
