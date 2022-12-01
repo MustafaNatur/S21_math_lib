@@ -18,6 +18,11 @@ build_fabs_tests:
 	./s21_test_fabs
 	gcov s21_test_fabs.c
 
+build_sqrt_tests:
+	$(CC) $(FLAGS) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) s21_test_sqrt.c s21_math.a -L. -o s21_test_sqrt
+	./s21_test_sqrt
+	gcov s21_test_sqrt.c
+
 clean:
 	rm -rf *.o
 	rm -rf *.gcno
