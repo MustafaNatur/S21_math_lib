@@ -23,6 +23,11 @@ build_sqrt_tests:
 	./s21_test_sqrt
 	gcov s21_test_sqrt.c
 
+build_ceil_tests:
+	$(CC) $(FLAGS) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) s21_test_ceil.c s21_math.a -L. -o s21_test_ceil
+	./s21_test_ceil
+	gcov s21_test_ceil.c
+
 clean:
 	rm -rf *.o
 	rm -rf *.gcno
