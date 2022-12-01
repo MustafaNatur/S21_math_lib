@@ -8,19 +8,19 @@ START_TEST(test_s21_math_ceil_usual) {
   double testValue1 = -5.7;
   double testValue2 = 5.1;
   double testValue3 = 12.4;
-  ck_assert_double_eq(s21_ceil(testValue1), ceil(testValue1));
-  ck_assert_double_eq(s21_ceil(testValue2), ceil(testValue2));
-  ck_assert_double_eq(s21_ceil(testValue3), ceil(testValue3));
+  ck_assert_ldouble_eq(s21_ceil(testValue1), ceil(testValue1));
+  ck_assert_ldouble_eq(s21_ceil(testValue2), ceil(testValue2));
+  ck_assert_ldouble_eq(s21_ceil(testValue3), ceil(testValue3));
 }
 END_TEST
 
 START_TEST(test_s21_math_ceil_unusual) {
   double testValue1 = -10.45934;
-  double testValue2 = 10.0;
+  double testValue2 = 10.1;
   double testValue3 = 0.0;
-  ck_assert_double_eq(s21_ceil(testValue1), ceil(testValue1));
-  ck_assert_double_eq(s21_ceil(testValue2), ceil(testValue2));
-  ck_assert_double_eq(s21_ceil(testValue3), ceil(testValue3));
+  ck_assert_ldouble_eq(s21_ceil(testValue1), ceil(testValue1));
+  ck_assert_ldouble_eq(s21_ceil(testValue2), ceil(testValue2));
+  ck_assert_ldouble_eq(s21_ceil(testValue3), ceil(testValue3));
 }
 END_TEST
 
