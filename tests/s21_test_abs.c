@@ -1,7 +1,7 @@
 #include <check.h>
+#include <math.h>
 #include <stdlib.h>
 
-#include "math.h"
 #include "s21_math.h"
 
 START_TEST(test_s21_math_abs_usual) {
