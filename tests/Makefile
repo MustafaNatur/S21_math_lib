@@ -44,3 +44,8 @@ clean:
 	rm -rf *.gcov
 	rm -rf *.gcda
 	rm -rf s21_test_abs
+	rm -rf s21_test_fabs
+	rm -rf s21_test_sqrt
+	rm -rf s21_test_ceil
+	rm -rf s21_test_floor
+	rm -rf s21_test_exp
