@@ -1,16 +1,16 @@
 #include <check.h>
+#include <math.h>
 #include <stdlib.h>
 
-#include "math.h"
 #include "s21_math.h"
 
 START_TEST(test_s21_math_fabs_usual) {
   double testValue1 = -5.503;
   double testValue2 = 5.0;
   double testValue3 = 0;
-  ck_assert_double_eq(s21_fabs(testValue1), fabs(testValue1));
-  ck_assert_double_eq(s21_fabs(testValue2), fabs(testValue2));
-  ck_assert_double_eq(s21_fabs(testValue3), fabs(testValue3));
+  ck_assert_ldouble_eq(s21_fabs(testValue1), fabs(testValue1));
+  ck_assert_ldouble_eq(s21_fabs(testValue2), fabs(testValue2));
+  ck_assert_ldouble_eq(s21_fabs(testValue3), fabs(testValue3));
 }
 END_TEST
 
@@ -18,9 +18,9 @@ START_TEST(test_s21_math_fabs_unusual) {
   double testValue1 = -10.45934;
   double testValue2 = 10.1;
   double testValue3 = 0.0;
-  ck_assert_double_eq(s21_fabs(testValue1), fabs(testValue1));
-  ck_assert_double_eq(s21_fabs(testValue2), fabs(testValue2));
-  ck_assert_double_eq(s21_fabs(testValue3), fabs(testValue3));
+  ck_assert_ldouble_eq(s21_fabs(testValue1), fabs(testValue1));
+  ck_assert_ldouble_eq(s21_fabs(testValue2), fabs(testValue2));
+  ck_assert_ldouble_eq(s21_fabs(testValue3), fabs(testValue3));
 }
 END_TEST
 
