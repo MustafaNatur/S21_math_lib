@@ -1,7 +1,8 @@
-#include "math.h"
-#include "s21_math.h"
 #include <check.h>
+#include <math.h>
 #include <stdlib.h>
+
+#include "s21_math.h"
 
 START_TEST(test_s21_math_sin) {
   int testValue1 = 1000;
@@ -9,10 +10,10 @@ START_TEST(test_s21_math_sin) {
   int testValue3 = 0.0005;
   int testValue4 = 0.98439849385;
 
-  ck_assert_ldouble_ne_tol(s21_sin(testValue1), s21_sin(testValue1), 0);
-  ck_assert_ldouble_ne_tol(s21_sin(testValue2), s21_sin(testValue2), 0);
-  ck_assert_ldouble_ne_tol(s21_sin(testValue3), s21_sin(testValue3), 0);
-  ck_assert_ldouble_ne_tol(s21_sin(testValue4), s21_sin(testValue4), 0);
+  ck_assert_ldouble_ne_tol(s21_sin(testValue1), sin(testValue1), 0);
+  ck_assert_ldouble_ne_tol(s21_sin(testValue2), sin(testValue2), 0);
+  ck_assert_ldouble_ne_tol(s21_sin(testValue3), sin(testValue3), 0);
+  ck_assert_ldouble_ne_tol(s21_sin(testValue4), sin(testValue4), 0);
 }
 END_TEST
 
