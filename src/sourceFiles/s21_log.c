@@ -6,22 +6,15 @@ long double s21_log(double x) {
   int exp_pow = 0;
   long double step = 0;
   long double res = 0;
-  long double result = res + exp_pow;
-  if (x > 0) {
-    while (x >= S21_EXP) {
-      x /= S21_EXP;
-      exp_pow++;
-    }
 
-    for (int i = 0; i < 150; i++) {
-      step = res;
-      res = step + 2 * (x - s21_exp(step)) / (x + s21_exp(step));
-    }
-    result = res + exp_pow;
-  } else if (x == 0) {
-    result = -1.0 / 0.0;
-  } else if (x < 0) {
-    result = 0.0 / 0.0;
+  while (x >= S21_EXP) {
+    x /= S21_EXP;
+    exp_pow++;
   }
-  return result;
+
+  for (int i = 0; i < 150; i++) {
+    step = res;
+    res = step + 2 * (x - s21_exp(step)) / (x + s21_exp(step));
+  }
+  return res + exp_pow;
 }

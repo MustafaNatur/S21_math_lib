@@ -1,8 +1,9 @@
 #include "s21_math.h"
 
 long double s21_floor(double x) {
-  if ((int)x != x) {
-    x = (int)x - 1;
+  long double floor_res = (long long int)x;
+  if (floor_res < 0 && x != floor_res) {
+    floor_res -= 1;
   }
-  return x;
+  return floor_res;
 }
