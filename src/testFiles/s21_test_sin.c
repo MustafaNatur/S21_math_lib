@@ -1,7 +1,8 @@
-#include "math.h"
-#include "../s21_math.h"
 #include <check.h>
+#include <math.h>
 #include <stdlib.h>
+
+#include "s21_math.h"
 
 START_TEST(test_s21_math_sin) {
   int testValue1 = 1000;

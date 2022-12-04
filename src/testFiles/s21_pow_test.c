@@ -1,7 +1,8 @@
-#include "math.h"
-#include "../s21_math.h"
 #include <check.h>
+#include <math.h>
 #include <stdlib.h>
+
+#include "s21_math.h"
 
 START_TEST(test_s21_math_pow_big) {
   int exp1 = -2989839;
@@ -11,14 +12,11 @@ START_TEST(test_s21_math_pow_big) {
   int testValue4 = 55;
   int testValue5 = -77;
 
-
   ck_assert_ldouble_ne_tol(s21_pow(exp1, testValue1), pow(exp1, testValue1), 0);
   ck_assert_ldouble_ne_tol(s21_pow(exp1, testValue2), pow(exp1, testValue2), 0);
   ck_assert_ldouble_ne_tol(s21_pow(exp1, testValue3), pow(exp1, testValue3), 0);
   ck_assert_ldouble_ne_tol(s21_pow(exp1, testValue4), pow(exp1, testValue4), 0);
   ck_assert_ldouble_ne_tol(s21_pow(exp1, testValue5), pow(exp1, testValue5), 0);
-
-
 }
 END_TEST
 
@@ -35,7 +33,6 @@ START_TEST(test_s21_math_pow_small) {
   ck_assert_ldouble_ne_tol(s21_pow(exp2, testValue3), pow(exp2, testValue3), 0);
   ck_assert_ldouble_ne_tol(s21_pow(exp2, testValue4), pow(exp2, testValue4), 0);
   ck_assert_ldouble_ne_tol(s21_pow(exp2, testValue5), pow(exp2, testValue5), 0);
-
 }
 END_TEST
 
