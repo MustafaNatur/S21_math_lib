@@ -17,7 +17,7 @@ END_TEST
 START_TEST(test_s21_math_sqrt_unusual) {
   double testValue1 = -1;
   double testValue2 = 1e10;
-  double testValue3 = 2.56;
+  double testValue3 = 0.01;
   ck_assert_double_nan(s21_sqrt(testValue1));
   ck_assert_ldouble_ne_tol(s21_sqrt(testValue2), sqrt(testValue2), 0);
   ck_assert_ldouble_ne_tol(s21_sqrt(testValue3), sqrt(testValue3), 0);
