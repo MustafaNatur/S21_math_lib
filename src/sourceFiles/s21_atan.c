@@ -1,4 +1,3 @@
-#include <math.h>
 #include "s21_math.h"
 
 #define EPS 5000
@@ -10,9 +9,9 @@ long double s21_atan(double x) {
         for (int i = 0; i < EPS; i++) {
             result+= (s21_pow(-1, i)*s21_pow(x,(1*k+2*k*i)))/(1+2*i);
         }
-        result = (k == -1) ? (M_PI*s21_fabs(x)/(2*x) - result):result;
+        result = (k == -1) ? (S21_PI*s21_fabs(x)/(2*x) - result):result;
     } else {
-        result =  (x == 1) ? M_PI/4.0:M_PI/4.0 * (-1);
+        result =  (x == 1) ? S21_PI/4.0:S21_PI/4.0 * (-1);
     }
     
     return result;

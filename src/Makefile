@@ -29,6 +29,11 @@ build_all_tests:
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_cos.c -L. s21_math.a  -o s21_test_cos
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_sin.c -L. s21_math.a  -o s21_test_sin
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_tan.c -L. s21_math.a  -o s21_test_tan
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_atan.c -L. s21_math.a  -o s21_test_atan
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_tan.c -L. s21_math.a  -o s21_test_tan
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_asin.c -L. s21_math.a  -o s21_test_asin
+
+
 
 
 	
