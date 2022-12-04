@@ -8,7 +8,7 @@ long double s21_atan(double x) {
     if (x != 1 && x != -1) {
         int k = s21_fabs(x) > 1 ? -1:1;
         for (int i = 0; i < EPS; i++) {
-            result+= (pow(-1, i)*pow(x,(1*k+2*k*i)))/(1+2*i);
+            result+= (s21_pow(-1, i)*s21_pow(x,(1*k+2*k*i)))/(1+2*i);
         }
         result = (k == -1) ? (M_PI*s21_fabs(x)/(2*x) - result):result;
     } else {

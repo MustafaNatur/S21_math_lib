@@ -4,23 +4,23 @@
 
 #include "s21_math.h"
 
-START_TEST(test_s21_math_atan_usual) {
+START_TEST(test_s21_math_acos_usual) {
   for (double i = -10.0; i < 10.0; i+=0.1) {
-    ck_assert_int_ne_tol(s21_atan(i), atan(i), 0);
+    ck_assert_int_ne_tol(s21_acos(i), acos(i), 0);
   }
 }
 END_TEST
 
-Suite *s21_math_atan_suite() {
+Suite *s21_math_acos_suite() {
   Suite *s;
-  TCase *tc_atan_usual;
+  TCase *tc_acos_usual;
 
-  s = suite_create("s21_atan");
+  s = suite_create("s21_acos");
 
-  tc_atan_usual = tcase_create("s21_atan_usual");
-  tcase_add_test(tc_atan_usual, test_s21_math_atan_usual);
+  tc_acos_usual = tcase_create("s21_acos_usual");
+  tcase_add_test(tc_acos_usual, test_s21_math_acos_usual);
 
-  suite_add_tcase(s, tc_atan_usual);
+  suite_add_tcase(s, tc_acos_usual);
 
   return s;
 }
@@ -30,7 +30,7 @@ int main() {
   int failed = 0;
   SRunner *runner;
 
-  s = s21_math_atan_suite();
+  s = s21_math_acos_suite();
   runner = srunner_create(s);
 
   srunner_run_all(runner, CK_NORMAL);

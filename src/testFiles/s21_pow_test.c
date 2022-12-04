@@ -1,5 +1,5 @@
 #include "math.h"
-#include "../s21_math.h"
+#include "s21_math.h"
 #include <check.h>
 #include <stdlib.h>
 
