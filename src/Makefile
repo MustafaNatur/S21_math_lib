@@ -30,4 +30,6 @@ clean:
 	rm -rf *.gcov
 	rm -rf *.gcda
 	rm -rf *.a
+	rm -rf *.info
+	rm -rf s21*
 
