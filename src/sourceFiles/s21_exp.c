@@ -14,7 +14,7 @@ long double s21_exp(double x) {
     T_series += step;
     if (T_series > S21_MAX) {
       flag_max = 1;
-      T_series /= 0.0;
+      T_series = POS_INF;
     }
   }
   return T_series;
