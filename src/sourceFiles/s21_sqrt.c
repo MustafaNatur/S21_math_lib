@@ -19,7 +19,7 @@ long double s21_sqrt(double x) {
       mid = (left + right) / 2;
     }
   } else {
-    mid = 0. / 0.;
+    mid = NAN;
   }
   return mid;
 }

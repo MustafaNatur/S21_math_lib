@@ -4,6 +4,7 @@
 #define S21_PI 3.1415926535897932
 #define S21_EXP 2.7182818284590452
 #define S21_MAX 1e100
+#define NAN __builtin_nanf("0x7fc00000")
 
 int s21_abs(int x);
 long double s21_acos(double x);
@@ -21,3 +22,6 @@ long double s21_sin(double x);
 long double s21_sqrt(double x);
 long double s21_tan(double x);
 long double s21_factorial(int x);
+
+long double POS_INF = 1.0 / 0.0;
+long double NEG_INF = -1.0 / 0.0;
