@@ -2,7 +2,7 @@
 
 long double s21_fmod(double x, double y) {
   if (y > 0) {
-    while (x > y) {
+    while (x >= y) {
       x -= y;
     }
   } else if (y < 0) {
