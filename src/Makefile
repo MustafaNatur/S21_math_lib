@@ -34,6 +34,12 @@ build_all_tests:
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_asin.c -L. s21_math.a  -o s21_test_asin
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_atan.c -L. s21_math.a  -o s21_test_atan
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_fmod.c -L. s21_math.a  -o s21_test_fmod
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_sin.c -L. s21_math.a  -o s21_test_sin
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_cos.c -L. s21_math.a  -o s21_test_cos
+
+
+
+
 
 gen_html:
 	./s21_test_fmod
@@ -44,17 +50,9 @@ gen_html:
 	./s21_test_floor
 	./s21_test_log
 	./s21_test_sqrt
-	
-	
+	./s21_test_fmod
 	./s21_test_sin
-	./s21_test_tan
-	./s21_test_atan
-	./s21_test_acos
-	./s21_test_asin
-
-	./s21_test_pow
 	./s21_test_cos
-	
 	lcov -o tests.info -c -d .  
 	genhtml -o report tests.info
 

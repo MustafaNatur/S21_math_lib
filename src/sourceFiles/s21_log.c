@@ -19,9 +19,9 @@ long double s21_log(double x) {
     }
     result = res + exp_pow;
   } else if (x == 0) {
-    result = -1.0 / 0.0;
+    result = NEG_INF;
   } else if (x < 0) {
-    result = 0.0 / 0.0;
+    result = NAN;
   }
   return result;
 }
