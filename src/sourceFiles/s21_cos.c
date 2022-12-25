@@ -6,10 +6,12 @@ long double s21_cos(double x) {
   double xx = x * x;
   double pw = 1;
   double factorial = 1.0;
-  for (int i = 1; i < 25; i += 2) {
-    factorial /= i;
+  for (int i = 0; i < 25; i += 2) {
+    if (i != 0) {
+      factorial /= i;
+    }
     result += sign * pw * factorial;
-    factorial /= (2 * i);
+    factorial /= (i + 1);
     sign = -sign;
     pw *= xx;
   }

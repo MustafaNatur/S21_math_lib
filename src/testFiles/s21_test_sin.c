@@ -5,7 +5,7 @@
 #include "s21_math.h"
 
 START_TEST(test_s21_math_sin) {
-  int testValue1 = 1000;
+  int testValue1 = 100;
   int testValue2 = -30030403;
   int testValue3 = 0.0005;
   int testValue4 = 0.98439849385;
