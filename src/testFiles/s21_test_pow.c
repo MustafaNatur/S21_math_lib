@@ -5,34 +5,34 @@
 #include "s21_math.h"
 
 START_TEST(test_s21_math_pow_big) {
-  int exp1 = -2989839;
-  int testValue1 = 0.0004;
-  int testValue2 = 100;
-  int testValue3 = 0;
-  int testValue4 = 55;
-  int testValue5 = -77;
+  int base = -2989839;
+  int exp1 = 0.0004;
+  int exp2 = 100;
+  int exp3 = 0;
+  int exp4 = 55;
+  int exp5 = -77;
 
-  ck_assert_ldouble_ne_tol(pow(exp1, testValue1), pow(exp1, testValue1), 0);
-  ck_assert_ldouble_infinite(pow(exp1, testValue2));
-  ck_assert_ldouble_ne_tol(pow(exp1, testValue3), pow(exp1, testValue3), 0);
-  ck_assert_ldouble_infinite(pow(exp1, testValue4));
-  ck_assert_ldouble_ne_tol(pow(exp1, testValue5), pow(exp1, testValue5), 0);
+  ck_assert_ldouble_ne_tol(s21_pow(base, exp1), pow(base, exp1), 0);
+  ck_assert_ldouble_infinite(s21_pow(base, exp2));
+  ck_assert_ldouble_ne_tol(s21_pow(base, exp3), pow(base, exp3), 0);
+  ck_assert_ldouble_infinite(s21_pow(base, exp4));
+  ck_assert_ldouble_ne_tol(s21_pow(base, exp5), pow(base, exp5), 0);
 }
 END_TEST
 
 START_TEST(test_s21_math_pow_small) {
-  int exp2 = 0.0083928293832;
-  int testValue1 = 0.0004;
-  int testValue2 = 293;
-  int testValue3 = 0;
-  int testValue4 = 66;
-  int testValue5 = -99;
+  int base = 0.0083928293832;
+  int exp1 = 0.0004;
+  int exp2 = 293;
+  int exp3 = 0;
+  int exp4 = 66;
+  int exp5 = -99;
 
-  ck_assert_ldouble_ne_tol(pow(exp2, testValue1), pow(exp2, testValue1), 0);
-  ck_assert_ldouble_ne_tol(pow(exp2, testValue2), pow(exp2, testValue2), 0);
-  ck_assert_ldouble_ne_tol(pow(exp2, testValue3), pow(exp2, testValue3), 0);
-  ck_assert_ldouble_ne_tol(pow(exp2, testValue4), pow(exp2, testValue4), 0);
-  ck_assert_ldouble_infinite(pow(exp2, testValue5));
+  ck_assert_ldouble_ne_tol(s21_pow(base, exp1), pow(base, exp1), 0);
+  ck_assert_ldouble_ne_tol(s21_pow(base, exp2), pow(base, exp2), 0);
+  ck_assert_ldouble_ne_tol(s21_pow(base, exp3), pow(base, exp3), 0);
+  ck_assert_ldouble_ne_tol(s21_pow(base, exp4), pow(base, exp4), 0);
+  ck_assert_ldouble_infinite(s21_pow(base, exp5));
 }
 END_TEST
 

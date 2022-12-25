@@ -4,11 +4,20 @@
 
 #include "s21_math.h"
 
-START_TEST(test_s21_math_sin) {
+START_TEST(test_s21_math_sin_usual) {
+  double step = 0.1;
+  for (double i = -2 * S21_PI; i  <= 2 * S21_PI; i+=step) {
+    ck_assert_ldouble_ne_tol(s21_sin(i), sin(i), 0);
+  }
+}
+END_TEST
+
+START_TEST(test_s21_math_sin_unusual) {
   int testValue1 = 1000;
   int testValue2 = -30030403;
   int testValue3 = 0.0005;
   int testValue4 = 0.98439849385;
+  double step = 0.1;
 
   ck_assert_ldouble_ne_tol(s21_sin(testValue1), sin(testValue1), 0);
   ck_assert_ldouble_ne_tol(s21_sin(testValue2), sin(testValue2), 0);
@@ -24,7 +33,8 @@ Suite *s21_math_sin_suite() {
   s = suite_create("s21_sin");
 
   tc_sin = tcase_create("s21_sin");
-  tcase_add_test(tc_sin, test_s21_math_sin);
+  tcase_add_test(tc_sin, test_s21_math_sin_usual);
+  tcase_add_test(tc_sin, test_s21_math_sin_unusual);
   suite_add_tcase(s, tc_sin);
   return s;
 }

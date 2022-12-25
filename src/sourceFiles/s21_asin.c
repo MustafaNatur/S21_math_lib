@@ -2,5 +2,11 @@
 
 
 long double s21_asin(double x) {
-    return s21_atan(1/s21_sqrt(1 - pow(x, 2)));
+    double ans = 0;
+    if (x == 1.0 || x == -1.0) {
+        ans = 1.57079633 * x;
+    } else {
+        ans = s21_atan(1.0/s21_sqrt(1 - x*x));
+    }
+    return ans;
 }
