@@ -1,3 +1,4 @@
+#!/bin/bash
 FLAGS=-Wall -Wextra -Werror
 CC=gcc
 FUNC_FILES_C=sourceFiles/*.c
@@ -37,11 +38,14 @@ build_all_tests:
 	
 
 gen_html:
-	./s21_test_abs
+	
 
-	./s21_test_exp
-	./s21_test_fmod
+#	./s21_test_log
+#	./s21_test_exp
+#	./s21_test_fmod
 	./s21_test_pow
+#	./s21_test_abs
+
 	./s21_test_atan
 	./s21_test_ceil
 	./s21_test_cos
@@ -49,7 +53,7 @@ gen_html:
 	./s21_test_fabs
 	./s21_test_floor
 	./s21_test_fmod
-	./s21_test_log
+
 	
 	./s21_test_sin
 	./s21_test_sqrt

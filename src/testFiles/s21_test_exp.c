@@ -18,9 +18,13 @@ START_TEST(test_s21_math_exp_unusual) {
   double testValue1 = 243757437;
   double testValue2 = -24.4353425;
   double testValue3 = 0.0;
+
+  int base = 0.0083928293832;
+  int exp1 = 0.0004;
   ck_assert_float_infinite(s21_exp(testValue1));
   ck_assert_ldouble_ne_tol(s21_exp(testValue2), exp(testValue2), 0);
   ck_assert_ldouble_ne_tol(s21_exp(testValue3), exp(testValue3), 0);
+  ck_assert_ldouble_ne_tol(s21_exp(testValue2), exp(testValue2), 0);
 }
 END_TEST
 

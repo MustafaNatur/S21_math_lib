@@ -21,8 +21,8 @@ START_TEST(test_s21_math_pow_big) {
 END_TEST
 
 START_TEST(test_s21_math_pow_small) {
-  int base = 0.0083928293832;
-  int exp1 = 0.0004;
+  double base = 0.0083928293832;
+  double exp1 = 0.0004;
   int exp2 = 293;
   int exp3 = 0;
   int exp4 = 66;

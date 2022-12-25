@@ -5,7 +5,7 @@
 #include "s21_math.h"
 
 START_TEST(test_s21_math_acos_usual) {
-  for (double i = -10.0; i < 10.0; i+=0.1) {
+  for (double i = -1; i <= 1; i+=0.1) {
     ck_assert_ldouble_ne_tol(s21_acos(i), acos(i), 0);
   }
 }
