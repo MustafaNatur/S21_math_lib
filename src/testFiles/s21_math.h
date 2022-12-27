@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "math.h"
+//#include "math.h"
 
 #define S21_EPS 1e-100
 #define S21_PI 3.1415926535897932

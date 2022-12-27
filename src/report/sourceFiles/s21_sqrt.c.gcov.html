@@ -31,13 +31,13 @@
             <td class="headerValue">tests.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">15</td>
-            <td class="headerCovTableEntry">15</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">18</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-12-25 16:58:31</td>
+            <td class="headerValue">2022-12-27 19:30:50</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -62,28 +62,28 @@
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : #include &quot;s21_math.h&quot;</a>
 <a name="2"><span class="lineNum">       2 </span>            : </a>
-<a name="3"><span class="lineNum">       3 </span><span class="lineCov">          6 : long double s21_sqrt(double x) {</span></a>
-<a name="4"><span class="lineNum">       4 </span><span class="lineCov">          6 :   long double mid = 0;</span></a>
-<a name="5"><span class="lineNum">       5 </span><span class="lineCov">          6 :   if (x &gt;= 0) {</span></a>
-<a name="6"><span class="lineNum">       6 </span><span class="lineCov">          5 :     long double left = 0;</span></a>
-<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          5 :     long double right = x;</span></a>
-<a name="8"><span class="lineNum">       8 </span><span class="lineCov">          5 :     if (x &lt; 1 &amp;&amp; x &gt; 0) {</span></a>
-<a name="9"><span class="lineNum">       9 </span><span class="lineCov">          1 :       right = 1;</span></a>
-<a name="10"><span class="lineNum">      10 </span>            :     }</a>
-<a name="11"><span class="lineNum">      11 </span><span class="lineCov">          5 :     mid = (left + right) / 2;</span></a>
+<a name="3"><span class="lineNum">       3 </span><span class="lineCov">         46 : long double s21_sqrt(double x) {</span></a>
+<a name="4"><span class="lineNum">       4 </span><span class="lineCov">         46 :   long double mid = 0;</span></a>
+<a name="5"><span class="lineNum">       5 </span><span class="lineCov">         46 :   if (x &gt;= 0) {</span></a>
+<a name="6"><span class="lineNum">       6 </span><span class="lineCov">         44 :     long double left = 0;</span></a>
+<a name="7"><span class="lineNum">       7 </span><span class="lineCov">         44 :     long double right = x;</span></a>
+<a name="8"><span class="lineNum">       8 </span><span class="lineCov">         44 :     if (x &lt; 1 &amp;&amp; x &gt; 0) {</span></a>
+<a name="9"><span class="lineNum">       9 </span><span class="lineCov">         39 :       right = 1;</span></a>
+<a name="10"><span class="lineNum">      10 </span><span class="lineCov">         39 :     }</span></a>
+<a name="11"><span class="lineNum">      11 </span><span class="lineCov">         44 :     mid = (left + right) / 2;</span></a>
 <a name="12"><span class="lineNum">      12 </span>            : </a>
-<a name="13"><span class="lineNum">      13 </span><span class="lineCov">        285 :     while (mid - left &gt; S21_EPS) {</span></a>
-<a name="14"><span class="lineNum">      14 </span><span class="lineCov">        280 :       if (mid * mid &gt; x) {</span></a>
-<a name="15"><span class="lineNum">      15 </span><span class="lineCov">        184 :         right = mid;</span></a>
-<a name="16"><span class="lineNum">      16 </span>            :       } else {</a>
-<a name="17"><span class="lineNum">      17 </span><span class="lineCov">         96 :         left = mid;</span></a>
+<a name="13"><span class="lineNum">      13 </span><span class="lineCov">       1508 :     while (mid - left &gt; S21_EPS) {</span></a>
+<a name="14"><span class="lineNum">      14 </span><span class="lineCov">       1464 :       if (mid * mid &gt; x) {</span></a>
+<a name="15"><span class="lineNum">      15 </span><span class="lineCov">        700 :         right = mid;</span></a>
+<a name="16"><span class="lineNum">      16 </span><span class="lineCov">        700 :       } else {</span></a>
+<a name="17"><span class="lineNum">      17 </span><span class="lineCov">        764 :         left = mid;</span></a>
 <a name="18"><span class="lineNum">      18 </span>            :       }</a>
-<a name="19"><span class="lineNum">      19 </span><span class="lineCov">        280 :       mid = (left + right) / 2;</span></a>
+<a name="19"><span class="lineNum">      19 </span><span class="lineCov">       1464 :       mid = (left + right) / 2;</span></a>
 <a name="20"><span class="lineNum">      20 </span>            :     }</a>
-<a name="21"><span class="lineNum">      21 </span>            :   } else {</a>
-<a name="22"><span class="lineNum">      22 </span><span class="lineCov">          1 :     mid = NAN;</span></a>
+<a name="21"><span class="lineNum">      21 </span><span class="lineCov">         44 :   } else {</span></a>
+<a name="22"><span class="lineNum">      22 </span><span class="lineCov">          2 :     mid = NAN;</span></a>
 <a name="23"><span class="lineNum">      23 </span>            :   }</a>
-<a name="24"><span class="lineNum">      24 </span><span class="lineCov">          6 :   return mid;</span></a>
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">         46 :   return mid;</span></a>
 <a name="25"><span class="lineNum">      25 </span>            : }</a>
 </pre>
       </td>

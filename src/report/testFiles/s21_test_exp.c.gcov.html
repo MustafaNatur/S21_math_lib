@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-12-25 16:58:31</td>
+            <td class="headerValue">2022-12-27 19:30:50</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -81,9 +81,9 @@
 <a name="19"><span class="lineNum">      19 </span><span class="lineCov">          1 :   double testValue2 = -24.4353425;</span></a>
 <a name="20"><span class="lineNum">      20 </span><span class="lineCov">          1 :   double testValue3 = 0.0;</span></a>
 <a name="21"><span class="lineNum">      21 </span>            : </a>
-<a name="22"><span class="lineNum">      22 </span><span class="lineCov">          1 :   int base = 0.0083928293832;</span></a>
-<a name="23"><span class="lineNum">      23 </span><span class="lineCov">          1 :   int exp1 = 0.0004;</span></a>
-<a name="24"><span class="lineNum">      24 </span><span class="lineCov">          2 :   ck_assert_float_infinite(s21_exp(testValue1));</span></a>
+<a name="22"><span class="lineNum">      22 </span><span class="lineCov">          1 :   double base = 0.0083928293832;</span></a>
+<a name="23"><span class="lineNum">      23 </span><span class="lineCov">          1 :   double exp1 = 0.0004;</span></a>
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">          1 :   ck_assert_float_infinite(s21_exp(testValue1));</span></a>
 <a name="25"><span class="lineNum">      25 </span><span class="lineCov">          1 :   ck_assert_ldouble_ne_tol(s21_exp(testValue2), exp(testValue2), 0);</span></a>
 <a name="26"><span class="lineNum">      26 </span><span class="lineCov">          1 :   ck_assert_ldouble_ne_tol(s21_exp(testValue3), exp(testValue3), 0);</span></a>
 <a name="27"><span class="lineNum">      27 </span><span class="lineCov">          1 :   ck_assert_ldouble_ne_tol(s21_exp(testValue2), exp(testValue2), 0);</span></a>
@@ -116,9 +116,9 @@
 <a name="54"><span class="lineNum">      54 </span><span class="lineCov">          3 :   runner = srunner_create(s);</span></a>
 <a name="55"><span class="lineNum">      55 </span>            : </a>
 <a name="56"><span class="lineNum">      56 </span><span class="lineCov">          3 :   srunner_run_all(runner, CK_NORMAL);</span></a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          1 :   failed = srunner_ntests_failed(runner);</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">          1 :   srunner_free(runner);</span></a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">          1 :   return (failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          3 :   failed = srunner_ntests_failed(runner);</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">          3 :   srunner_free(runner);</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">          3 :   return (failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;</span></a>
 <a name="60"><span class="lineNum">      60 </span>            : }</a>
 </pre>
       </td>

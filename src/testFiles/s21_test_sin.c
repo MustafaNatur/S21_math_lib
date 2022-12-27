@@ -15,8 +15,8 @@ END_TEST
 START_TEST(test_s21_math_sin_unusual) {
   int testValue1 = 1000;
   int testValue2 = -30030403;
-  int testValue3 = 0.0005;
-  int testValue4 = 0.98439849385;
+  double testValue3 = 0.0005;
+  double testValue4 = 0.98439849385;
   double step = 0.1;
 
   ck_assert_ldouble_ne_tol(s21_sin(testValue1), sin(testValue1), 0);

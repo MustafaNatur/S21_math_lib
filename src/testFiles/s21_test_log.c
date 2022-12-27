@@ -19,7 +19,7 @@ START_TEST(test_s21_math_log_unusual) {
   double testValue2 = 0;
   double testValue3 = 0.00001;
 
-  int base = 0.0083928293832;
+  double base = 0.0083928293832;
   ck_assert_double_nan(s21_log(testValue1));
   ck_assert_ldouble_infinite(s21_log(testValue2));
   ck_assert_ldouble_ne_tol(s21_log(testValue3), log(testValue3), 0);

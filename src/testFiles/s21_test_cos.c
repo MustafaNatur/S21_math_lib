@@ -7,8 +7,8 @@
 START_TEST(test_s21_math_cos_unusual) {
   int testValue1 = 100;
   int testValue2 = -30030403;
-  int testValue3 = 0.0005;
-  int testValue4 = 0.98439849385;
+  double testValue3 = 0.0005;
+  double testValue4 = 0.98439849385;
 
   ck_assert_ldouble_ne_tol(s21_cos(testValue1), cos(testValue1), 0);
   ck_assert_ldouble_ne_tol(s21_cos(testValue2), cos(testValue2), 0);

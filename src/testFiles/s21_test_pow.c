@@ -4,9 +4,19 @@
 
 #include "s21_math.h"
 
+START_TEST(test_s21_math_pow_usual) {
+  int base = -8;
+  double exp1 = 1.0/4.0;
+  double exp2 = 3.0;
+  ck_assert_double_nan(s21_pow(base, exp1));
+  ck_assert_ldouble_ne_tol(s21_pow(base, exp2), pow(base, exp2), 0);
+
+}
+END_TEST
+
 START_TEST(test_s21_math_pow_big) {
-  int base = -2989839;
-  int exp1 = 0.0004;
+  int base = 2989839;
+  double exp1 = 0.0004;
   int exp2 = 100;
   int exp3 = 0;
   int exp4 = 55;
@@ -38,9 +48,13 @@ END_TEST
 
 Suite *s21_math_pow_suite() {
   Suite *s;
-  TCase *tc_pow_big, *tc_pow_small;
+  TCase *tc_pow_big, *tc_pow_small, *tc_pow_usual;
 
   s = suite_create("pow");
+
+  tc_pow_usual = tcase_create("pow_usual");
+  tcase_add_test(tc_pow_usual, test_s21_math_pow_usual);
+  suite_add_tcase(s, tc_pow_usual);
 
   tc_pow_big = tcase_create("pow_big");
   tcase_add_test(tc_pow_big, test_s21_math_pow_big);
