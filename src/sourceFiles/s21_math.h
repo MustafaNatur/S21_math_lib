@@ -10,6 +10,7 @@
 #define isNAN(x) (x!=x)
 #define isPOS_INF(x) (x == POS_INF)
 #define isNEG_INF(x) (x == NEG_INF) 
+#define isNormal(x) (!isNAN(x) && !isNEG_INF(x) && !isPOS_INF(x))
 
 
 int s21_abs(int x);

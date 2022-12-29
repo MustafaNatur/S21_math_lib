@@ -12,8 +12,23 @@ START_TEST(test_s21_math_pow_usual) {
   int base = -8;
   double exp1 = 1.0/4.0;
   double exp2 = 3.0;
-  ck_assert_double_nan(s21_pow(base, exp1));
-  ck_assert_ldouble_eq_tol(s21_pow(base, exp2), pow(base, exp2), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(8, 3), pow(8, 3), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(-8, 3), pow(-8, 3), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(8, -3), pow(8, -3), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(0, 0), pow(0, 0), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(1, -3), pow(1, -3), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(0, 5), pow(0, 5), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(8.234, -3), pow(8.234, -3), 0.000001);
+
+
+  ck_assert_ldouble_eq_tol(s21_pow(5, 1.4), pow(5, 1.4), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(5, -1.4), pow(5, -1.4), 0.000001);
+  ck_assert_double_nan(s21_pow(-4, 1.4));
+  for (double i = 0.0; i < 10.0; i+=0.1) {
+    for (double j = 0.0; j < 10.0; j+=0.1) {
+      ck_assert_ldouble_eq_tol(s21_pow(i, j), pow(i, j), 0.0001);
+    }
+  }
 }
 END_TEST
 
@@ -41,11 +56,10 @@ START_TEST(test_s21_math_pow_small) {
   int exp4 = 66;
   int exp5 = -99;
 
-  ck_assert_ldouble_ne_tol(5.0, pow(base, exp1), 0);
-  ck_assert_ldouble_ne_tol(s21_pow(base, exp2), pow(base, exp2), 0);
-  ck_assert_ldouble_ne_tol(s21_pow(base, exp3), pow(base, exp3), 0);
-  ck_assert_ldouble_ne_tol(s21_pow(base, exp4), pow(base, exp4), 0);
-  ck_assert_ldouble_infinite(s21_pow(base, exp5));
+  ck_assert_ldouble_eq_tol(s21_pow(base, exp1), pow(base, exp1), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(base, exp2), pow(base, exp2), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(base, exp3), pow(base, exp3), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(base, exp4), pow(base, exp4), 0.000001);
 }
 END_TEST
 
@@ -53,7 +67,7 @@ START_TEST(test_s21_math_pow_cases_should_return_nan) {
   for (int i = 0; i < sizeArr(cases_pow_return_nan); i++) {
     double base = cases_pow_return_nan[i][0];
     double exp = cases_pow_return_nan[i][1];
-    ck_assert_double_nan(pow(base, exp));
+    ck_assert_double_nan(s21_pow(base, exp));
   }
 }
 END_TEST
@@ -62,7 +76,7 @@ START_TEST(test_s21_math_pow_cases_should_return_inf) {
   for (int i = 0; i < sizeArr(cases_pow_return_inf); i++) {
     double base = cases_pow_return_inf[i][0];
     double exp = cases_pow_return_inf[i][1];
-    ck_assert_ldouble_infinite(pow(base, exp));
+    ck_assert_ldouble_infinite(s21_pow(base, exp));
   }
 }
 END_TEST
@@ -71,7 +85,8 @@ START_TEST(test_s21_math_pow_cases_should_return_one) {
   for (int i = 0; i < sizeArr(cases_pow_return_one); i++) {
     double base = cases_pow_return_one[i][0];
     double exp = cases_pow_return_one[i][1];
-    ck_assert_double_eq(pow(base, exp), 1.0);
+    printf("%f %f\n", base, exp);
+    ck_assert_double_eq(s21_pow(base, exp), 1.0);
   }
 }
 END_TEST

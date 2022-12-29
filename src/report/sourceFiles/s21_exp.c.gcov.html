@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-12-29 17:34:36</td>
+            <td class="headerValue">2022-12-29 21:25:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -62,31 +62,31 @@
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : #include &quot;s21_math.h&quot;</a>
 <a name="2"><span class="lineNum">       2 </span>            : </a>
-<a name="3"><span class="lineNum">       3 </span><span class="lineCov">     301611 : long double s21_exp(double x) {</span></a>
-<a name="4"><span class="lineNum">       4 </span><span class="lineCov">     301611 :   long double i = 1;</span></a>
-<a name="5"><span class="lineNum">       5 </span><span class="lineCov">     301611 :   long double step = 1;</span></a>
-<a name="6"><span class="lineNum">       6 </span><span class="lineCov">     301611 :   long double T_series = 1;</span></a>
-<a name="7"><span class="lineNum">       7 </span><span class="lineCov">     301611 :   int flag_max = 0;</span></a>
+<a name="3"><span class="lineNum">       3 </span><span class="lineCov">    3312919 : long double s21_exp(double x) {</span></a>
+<a name="4"><span class="lineNum">       4 </span><span class="lineCov">    3312919 :   long double i = 1;</span></a>
+<a name="5"><span class="lineNum">       5 </span><span class="lineCov">    3312919 :   long double step = 1;</span></a>
+<a name="6"><span class="lineNum">       6 </span><span class="lineCov">    3312919 :   long double T_series = 1;</span></a>
+<a name="7"><span class="lineNum">       7 </span><span class="lineCov">    3312919 :   int flag_max = 0;</span></a>
 <a name="8"><span class="lineNum">       8 </span>            : </a>
-<a name="9"><span class="lineNum">       9 </span><span class="lineCov">     301611 :   if (isNAN(x)) {</span></a>
-<a name="10"><span class="lineNum">      10 </span><span class="lineCov">          2 :     T_series = S21_NAN;</span></a>
-<a name="11"><span class="lineNum">      11 </span><span class="lineCov">     301611 :   } else if (isPOS_INF(x)) {</span></a>
+<a name="9"><span class="lineNum">       9 </span><span class="lineCov">    3312919 :   if (isNAN(x)) {</span></a>
+<a name="10"><span class="lineNum">      10 </span><span class="lineCov">          6 :     T_series = S21_NAN;</span></a>
+<a name="11"><span class="lineNum">      11 </span><span class="lineCov">    3312919 :   } else if (isPOS_INF(x)) {</span></a>
 <a name="12"><span class="lineNum">      12 </span><span class="lineCov">          1 :     T_series = POS_INF;</span></a>
-<a name="13"><span class="lineNum">      13 </span><span class="lineCov">     301609 :   } else if (isNEG_INF(x)) {</span></a>
-<a name="14"><span class="lineNum">      14 </span><span class="lineCov">          1 :     T_series = 0.0;</span></a>
-<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          1 :   } else {</span></a>
-<a name="16"><span class="lineNum">      16 </span><span class="lineCov">   17668772 :     while (s21_fabs(step) &gt; S21_EPS &amp;&amp; flag_max == 0) {</span></a>
-<a name="17"><span class="lineNum">      17 </span><span class="lineCov">   17367165 :         step *= x / i;</span></a>
-<a name="18"><span class="lineNum">      18 </span><span class="lineCov">   17367165 :         i++;</span></a>
-<a name="19"><span class="lineNum">      19 </span><span class="lineCov">   17367165 :         T_series += step;</span></a>
-<a name="20"><span class="lineNum">      20 </span><span class="lineCov">   17367165 :         if (T_series &gt; S21_MAX) {</span></a>
+<a name="13"><span class="lineNum">      13 </span><span class="lineCov">    3312913 :   } else if (isNEG_INF(x)) {</span></a>
+<a name="14"><span class="lineNum">      14 </span><span class="lineCov">        101 :     T_series = 0.0;</span></a>
+<a name="15"><span class="lineNum">      15 </span><span class="lineCov">        101 :   } else {</span></a>
+<a name="16"><span class="lineNum">      16 </span><span class="lineCov">  192659573 :     while (s21_fabs(step) &gt; S21_EPS &amp;&amp; flag_max == 0) {</span></a>
+<a name="17"><span class="lineNum">      17 </span><span class="lineCov">  189346762 :         step *= x / i;</span></a>
+<a name="18"><span class="lineNum">      18 </span><span class="lineCov">  189346762 :         i++;</span></a>
+<a name="19"><span class="lineNum">      19 </span><span class="lineCov">  189346762 :         T_series += step;</span></a>
+<a name="20"><span class="lineNum">      20 </span><span class="lineCov">  189346762 :         if (T_series &gt; S21_MAX) {</span></a>
 <a name="21"><span class="lineNum">      21 </span><span class="lineCov">          1 :           flag_max = 1;</span></a>
 <a name="22"><span class="lineNum">      22 </span><span class="lineCov">          1 :           T_series = POS_INF;</span></a>
 <a name="23"><span class="lineNum">      23 </span><span class="lineCov">          1 :         }</span></a>
 <a name="24"><span class="lineNum">      24 </span>            :     }</a>
 <a name="25"><span class="lineNum">      25 </span>            :   }</a>
 <a name="26"><span class="lineNum">      26 </span>            :   </a>
-<a name="27"><span class="lineNum">      27 </span><span class="lineCov">     301611 :   return T_series;</span></a>
+<a name="27"><span class="lineNum">      27 </span><span class="lineCov">    3312919 :   return T_series;</span></a>
 <a name="28"><span class="lineNum">      28 </span>            : }</a>
 </pre>
       </td>

@@ -43,10 +43,11 @@ gen_html:
 	
 	./s21_test_log
 	./s21_test_exp
-	# ./s21_test_fmod
-	# ./s21_test_pow
-	# ./s21_test_abs
-	# ./s21_test_ceil
+	./s21_test_fmod
+	./s21_test_abs
+	./s21_test_pow
+	./s21_test_abs
+	./s21_test_ceil
 	# ./s21_test_cos
 	# ./s21_test_fabs
 	# ./s21_test_floor

@@ -22,13 +22,12 @@ double cases_pow_return_one[][2] ={{-1.00, POS_INF}, {-1.00, NEG_INF}, {1.00, NA
 // pow(-1.00, NEG_INF)->1.00 //
 // END
 
-
-// pow(1.00, NAN)->1.00 //
-// pow(1.00, POS_INF)->1.00 //
-// pow(1.00, 0.00)->1.00 //
-// pow(1.00, -5.00)->1.00 //
-// pow(1.00, 5.00)->1.00 //
-// pow(1.00, 1.50)->1.00 //
+// pow(1.00, NAN)->1.00 // 55
+// pow(1.00, POS_INF)->1.00 // 55
+// pow(1.00, 0.00)->1.00 // 55
+// pow(1.00, -5.00)->1.00 // 55
+// pow(1.00, 5.00)->1.00 // 55
+// pow(1.00, 1.50)->1.00 // 55
 // pow(-1.00, 3.00)->-1.00
 // pow(-1.00, 2.00)->1.00 //
 // pow(-1.00, 1.50)->-NAN //
@@ -36,15 +35,15 @@ double cases_pow_return_one[][2] ={{-1.00, POS_INF}, {-1.00, NEG_INF}, {1.00, NA
 
 
 // pow(NAN, 0.00)->1.00 //
-// pow(POS_INF, 0.00)->1.00 //
+// pow(POS_INF, 0.00)->1.00 // 33
 // pow(5.00, 0.00)->1.00 //
 // END
 
 
-// pow(0.10, POS_INF)->0.00
-// pow(-0.10, POS_INF)->0.00
-// pow(0.10, NEG_INF)->POS_INF //
-// pow(-0.10, NEG_INF)->POS_INF //
+// pow(0.10, POS_INF)->0.00 22
+// pow(-0.10, POS_INF)->0.00 11
+// pow(0.10, NEG_INF)->POS_INF // 22
+// pow(-0.10, NEG_INF)->POS_INF //11
 // pow(5.00, POS_INF)->POS_INF //
 // pow(-5.00, POS_INF)->POS_INF //
 // pow(5.00, NEG_INF)->0.00
@@ -52,13 +51,13 @@ double cases_pow_return_one[][2] ={{-1.00, POS_INF}, {-1.00, NEG_INF}, {1.00, NA
 // END
 
 
-// pow(POS_INF, 5.00)->POS_INF //
-// pow(POS_INF, POS_INF)->POS_INF //
-// pow(POS_INF, NAN)->NAN
-// pow(NEG_INF, 0.00)->1.00 //
-// pow(NEG_INF, 5.00)->NEG_INF
-// pow(NEG_INF, POS_INF)->POS_INF //
-// pow(NEG_INF, NAN)->NAN//
+// pow(POS_INF, 5.00)->POS_INF // 33
+// pow(POS_INF, POS_INF)->POS_INF // 33
+// pow(POS_INF, NAN)->NAN 33
+// pow(NEG_INF, 0.00)->1.00 // 44
+// pow(NEG_INF, 5.00)->NEG_INF 44
+// pow(NEG_INF, POS_INF)->POS_INF // 44
+// pow(NEG_INF, NAN)->NAN// 44
 // END
 
 
