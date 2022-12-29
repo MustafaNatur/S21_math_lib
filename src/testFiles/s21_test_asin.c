@@ -6,8 +6,8 @@
 
 START_TEST(test_s21_math_asin_usual) {
   double step=0.1;
-  for (double i = -1; i <= 1; i+=step) {
-    ck_assert_ldouble_ne_tol(s21_asin(i), asin(i), 0);
+  for (double i = 0.1; i <= 0.99; i+=step) {
+    ck_assert_ldouble_eq_tol(s21_asin(i), asin(i), 0.000001);
   }
 }
 END_TEST

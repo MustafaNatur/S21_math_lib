@@ -48,16 +48,18 @@ gen_html:
 	./s21_test_pow
 	./s21_test_abs
 	./s21_test_ceil
-	# ./s21_test_cos
-	# ./s21_test_fabs
-	# ./s21_test_floor
-	# ./s21_test_fmod
+	
+	./s21_test_fabs
+	./s21_test_floor
+	./s21_test_fmod
 	# ./s21_test_sin
-	# ./s21_test_sqrt
+	 #./s21_test_sqrt
 	# ./s21_test_tan
-	# ./s21_test_atan
-	# ./s21_test_asin
+	 ./s21_test_atan
+	 #./s21_test_asin
 	# ./s21_test_acos
+
+	#./s21_test_cos
 	
 	lcov -o tests.info -c -d .  
 	genhtml -o report tests.info

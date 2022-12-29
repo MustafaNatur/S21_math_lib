@@ -85,7 +85,6 @@ START_TEST(test_s21_math_pow_cases_should_return_one) {
   for (int i = 0; i < sizeArr(cases_pow_return_one); i++) {
     double base = cases_pow_return_one[i][0];
     double exp = cases_pow_return_one[i][1];
-    printf("%f %f\n", base, exp);
     ck_assert_double_eq(s21_pow(base, exp), 1.0);
   }
 }

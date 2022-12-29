@@ -10,10 +10,10 @@ START_TEST(test_s21_math_cos_unusual) {
   double testValue3 = 0.0005;
   double testValue4 = 0.98439849385;
 
-  ck_assert_ldouble_ne_tol(s21_cos(testValue1), cos(testValue1), 0);
-  ck_assert_ldouble_ne_tol(s21_cos(testValue2), cos(testValue2), 0);
-  ck_assert_ldouble_ne_tol(s21_cos(testValue3), cos(testValue3), 0);
-  ck_assert_ldouble_ne_tol(s21_cos(testValue4), cos(testValue4), 0);
+  ck_assert_ldouble_eq_tol(s21_cos(testValue1), cos(testValue1), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_cos(testValue2), cos(testValue2), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_cos(testValue3), cos(testValue3), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_cos(testValue4), cos(testValue4), 0.000001);
 }
 
 START_TEST(test_s21_math_cos_usual) {

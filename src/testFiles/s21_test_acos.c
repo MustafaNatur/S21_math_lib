@@ -6,7 +6,7 @@
 
 START_TEST(test_s21_math_acos_usual) {
   for (double i = -1; i <= 1; i+=0.1) {
-    ck_assert_ldouble_ne_tol(s21_acos(i), acos(i), 0);
+    ck_assert_ldouble_eq_tol(s21_acos(i), acos(i), 0.000001);
   }
 }
 END_TEST

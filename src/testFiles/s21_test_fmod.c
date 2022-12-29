@@ -11,12 +11,12 @@ START_TEST(test_s21_math_fmod_usual) {
   double testValueY2 = 2;
   double testValueX3 = 164.2;
   double testValueY3 = 0.3;
-  ck_assert_ldouble_ne_tol(s21_fmod(testValueX1, testValueY1),
-                           fmod(testValueX1, testValueY1), 0);
-  ck_assert_ldouble_ne_tol(s21_fmod(testValueX2, testValueY2),
-                           fmod(testValueX2, testValueY2), 0);
-  ck_assert_ldouble_ne_tol(s21_fmod(testValueX3, testValueY3),
-                           fmod(testValueX3, testValueY3), 0);
+  ck_assert_ldouble_eq_tol(s21_fmod(testValueX1, testValueY1),
+                           fmod(testValueX1, testValueY1), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_fmod(testValueX2, testValueY2),
+                           fmod(testValueX2, testValueY2), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_fmod(testValueX3, testValueY3),
+                           fmod(testValueX3, testValueY3), 0.000001);
 }
 END_TEST
 
@@ -29,8 +29,8 @@ START_TEST(test_s21_math_fmod_unusual) {
   double testValueY3 = -5;
   ck_assert_double_nan(s21_fmod(testValueX1, testValueY1));
   ck_assert_double_nan(s21_fmod(testValueX2, testValueY2));
-  ck_assert_ldouble_ne_tol(s21_fmod(testValueX3, testValueY3),
-                           fmod(testValueX3, testValueY3), 0);
+  ck_assert_ldouble_eq_tol(s21_fmod(testValueX3, testValueY3),
+                           fmod(testValueX3, testValueY3), 0.000001);
 }
 END_TEST
 
