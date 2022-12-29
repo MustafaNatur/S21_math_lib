@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-12-29 21:45:28</td>
+            <td class="headerValue">2022-12-29 22:57:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -64,35 +64,35 @@
 <a name="2"><span class="lineNum">       2 </span>            : </a>
 <a name="3"><span class="lineNum">       3 </span>            : /*   Yn+1 = Yn + 2 * (X - exp(Yn)) / (X + exp(Yn))   */</a>
 <a name="4"><span class="lineNum">       4 </span>            : </a>
-<a name="5"><span class="lineNum">       5 </span><span class="lineCov">      11119 : long double s21_log(double x) {</span></a>
-<a name="6"><span class="lineNum">       6 </span><span class="lineCov">      11119 :     int exp_pow = 0;</span></a>
-<a name="7"><span class="lineNum">       7 </span><span class="lineCov">      11119 :   long double step = 0;</span></a>
-<a name="8"><span class="lineNum">       8 </span><span class="lineCov">      11119 :   long double res = 0;</span></a>
-<a name="9"><span class="lineNum">       9 </span><span class="lineCov">      11119 :   long double result = res + exp_pow;</span></a>
-<a name="10"><span class="lineNum">      10 </span><span class="lineCov">      11119 :   if (isNAN(x)) {</span></a>
+<a name="5"><span class="lineNum">       5 </span><span class="lineCov">      11126 : long double s21_log(double x) {</span></a>
+<a name="6"><span class="lineNum">       6 </span><span class="lineCov">      11126 :     int exp_pow = 0;</span></a>
+<a name="7"><span class="lineNum">       7 </span><span class="lineCov">      11126 :   long double step = 0;</span></a>
+<a name="8"><span class="lineNum">       8 </span><span class="lineCov">      11126 :   long double res = 0;</span></a>
+<a name="9"><span class="lineNum">       9 </span><span class="lineCov">      11126 :   long double result = res + exp_pow;</span></a>
+<a name="10"><span class="lineNum">      10 </span><span class="lineCov">      11126 :   if (isNAN(x)) {</span></a>
 <a name="11"><span class="lineNum">      11 </span><span class="lineCov">          7 :     result = S21_NAN;</span></a>
-<a name="12"><span class="lineNum">      12 </span><span class="lineCov">      11119 :   } else if (isPOS_INF(x)) {</span></a>
+<a name="12"><span class="lineNum">      12 </span><span class="lineCov">      11126 :   } else if (isPOS_INF(x)) {</span></a>
 <a name="13"><span class="lineNum">      13 </span><span class="lineCov">          1 :     result = POS_INF;</span></a>
-<a name="14"><span class="lineNum">      14 </span><span class="lineCov">      11112 :   } else if(isNEG_INF(x)) {</span></a>
+<a name="14"><span class="lineNum">      14 </span><span class="lineCov">      11119 :   } else if(isNEG_INF(x)) {</span></a>
 <a name="15"><span class="lineNum">      15 </span><span class="lineCov">          1 :     result = -S21_NAN;</span></a>
 <a name="16"><span class="lineNum">      16 </span><span class="lineCov">          1 :   } else {</span></a>
-<a name="17"><span class="lineNum">      17 </span><span class="lineCov">      11110 :     if (x &gt; 0) {</span></a>
-<a name="18"><span class="lineNum">      18 </span><span class="lineCov">      24183 :         while (x &gt;= S21_EXP) {</span></a>
-<a name="19"><span class="lineNum">      19 </span><span class="lineCov">      13175 :           x /= S21_EXP;</span></a>
-<a name="20"><span class="lineNum">      20 </span><span class="lineCov">      13175 :           exp_pow++;</span></a>
+<a name="17"><span class="lineNum">      17 </span><span class="lineCov">      11117 :     if (x &gt; 0) {</span></a>
+<a name="18"><span class="lineNum">      18 </span><span class="lineCov">      24226 :         while (x &gt;= S21_EXP) {</span></a>
+<a name="19"><span class="lineNum">      19 </span><span class="lineCov">      13212 :           x /= S21_EXP;</span></a>
+<a name="20"><span class="lineNum">      20 </span><span class="lineCov">      13212 :           exp_pow++;</span></a>
 <a name="21"><span class="lineNum">      21 </span>            :         }</a>
-<a name="22"><span class="lineNum">      22 </span><span class="lineCov">    1662208 :         for (int i = 0; i &lt; 150; i++) {</span></a>
-<a name="23"><span class="lineNum">      23 </span><span class="lineCov">    1651200 :           step = res;</span></a>
-<a name="24"><span class="lineNum">      24 </span><span class="lineCov">    1651200 :           res = step + 2 * (x - s21_exp(step)) / (x + s21_exp(step));</span></a>
-<a name="25"><span class="lineNum">      25 </span><span class="lineCov">    1651200 :         }</span></a>
-<a name="26"><span class="lineNum">      26 </span><span class="lineCov">      11008 :         result = res + exp_pow;</span></a>
-<a name="27"><span class="lineNum">      27 </span><span class="lineCov">      11110 :     } else if (x == 0) {</span></a>
-<a name="28"><span class="lineNum">      28 </span><span class="lineCov">        101 :         result = NEG_INF;</span></a>
-<a name="29"><span class="lineNum">      29 </span><span class="lineCov">        102 :     } else if (x &lt; 0) {</span></a>
+<a name="22"><span class="lineNum">      22 </span><span class="lineCov">    1663114 :         for (int i = 0; i &lt; 150; i++) {</span></a>
+<a name="23"><span class="lineNum">      23 </span><span class="lineCov">    1652100 :           step = res;</span></a>
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">    1652100 :           res = step + 2 * (x - s21_exp(step)) / (x + s21_exp(step));</span></a>
+<a name="25"><span class="lineNum">      25 </span><span class="lineCov">    1652100 :         }</span></a>
+<a name="26"><span class="lineNum">      26 </span><span class="lineCov">      11014 :         result = res + exp_pow;</span></a>
+<a name="27"><span class="lineNum">      27 </span><span class="lineCov">      11117 :     } else if (x == 0) {</span></a>
+<a name="28"><span class="lineNum">      28 </span><span class="lineCov">        102 :         result = NEG_INF;</span></a>
+<a name="29"><span class="lineNum">      29 </span><span class="lineCov">        103 :     } else if (x &lt; 0) {</span></a>
 <a name="30"><span class="lineNum">      30 </span><span class="lineCov">          1 :         result = S21_NAN;</span></a>
 <a name="31"><span class="lineNum">      31 </span><span class="lineCov">          1 :     }</span></a>
 <a name="32"><span class="lineNum">      32 </span>            :   }</a>
-<a name="33"><span class="lineNum">      33 </span><span class="lineCov">      11119 :     return result;</span></a>
+<a name="33"><span class="lineNum">      33 </span><span class="lineCov">      11126 :     return result;</span></a>
 <a name="34"><span class="lineNum">      34 </span>            : }</a>
 </pre>
       </td>

@@ -19,6 +19,8 @@ START_TEST(test_s21_math_pow_usual) {
   ck_assert_ldouble_eq_tol(s21_pow(1, -3), pow(1, -3), 0.000001);
   ck_assert_ldouble_eq_tol(s21_pow(0, 5), pow(0, 5), 0.000001);
   ck_assert_ldouble_eq_tol(s21_pow(8.234, -3), pow(8.234, -3), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_pow(25, 0.5), pow(25, 0.5), 0.000001);
+
 
 
   ck_assert_ldouble_eq_tol(s21_pow(5, 1.4), pow(5, 1.4), 0.000001);
