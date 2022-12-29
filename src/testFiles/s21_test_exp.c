@@ -8,9 +8,9 @@ START_TEST(test_s21_math_exp_usual) {
   double testValue1 = -5;
   double testValue2 = 5;
   double testValue3 = 0.1;
-  ck_assert_ldouble_ne_tol(s21_exp(testValue1), exp(testValue1), 0);
-  ck_assert_ldouble_ne_tol(s21_exp(testValue2), exp(testValue2), 0);
-  ck_assert_ldouble_ne_tol(s21_exp(testValue3), exp(testValue3), 0);
+  ck_assert_ldouble_eq_tol(s21_exp(testValue1), exp(testValue1), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_exp(testValue2), exp(testValue2), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_exp(testValue3), exp(testValue3), 0.000001);
 }
 END_TEST
 
@@ -18,13 +18,19 @@ START_TEST(test_s21_math_exp_unusual) {
   double testValue1 = 243757437;
   double testValue2 = -24.4353425;
   double testValue3 = 0.0;
-
   double base = 0.0083928293832;
   double exp1 = 0.0004;
+  for (double i = -20.0; i <= 20.00; i+=0.1) {
+    ck_assert_ldouble_eq_tol(s21_exp(i), exp(i), 0.000001);
+  }
   ck_assert_float_infinite(s21_exp(testValue1));
-  ck_assert_ldouble_ne_tol(s21_exp(testValue2), exp(testValue2), 0);
-  ck_assert_ldouble_ne_tol(s21_exp(testValue3), exp(testValue3), 0);
-  ck_assert_ldouble_ne_tol(s21_exp(testValue2), exp(testValue2), 0);
+  ck_assert_ldouble_eq_tol(s21_exp(testValue2), exp(testValue2), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_exp(testValue3), exp(testValue3), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_exp(testValue2), exp(testValue2), 0.000001);
+  ck_assert_float_infinite(s21_exp(POS_INF));
+  ck_assert_ldouble_eq(s21_exp(NEG_INF), 0.0);
+  ck_assert_ldouble_nan(s21_exp(S21_NAN));
+  ck_assert_ldouble_nan(s21_exp(-S21_NAN));
 }
 END_TEST
 

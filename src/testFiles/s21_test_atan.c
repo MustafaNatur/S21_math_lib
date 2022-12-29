@@ -9,11 +9,9 @@ START_TEST(test_s21_math_atan_usual) {
   //   ck_assert_ldouble_ne_tol(s21_atan(i), atan(i), 0);
   // }
   ck_assert_ldouble_ne_tol(s21_atan(1.0), atan(1.0), 0);
-    ck_assert_ldouble_ne_tol(s21_atan(-1.0), atan(-1.0), 0);
-        ck_assert_ldouble_ne_tol(s21_atan(0.0), atan(0.0), 0);
-            ck_assert_ldouble_ne_tol(s21_atan(1000.0), atan(1000.0), 0);
-
-
+  ck_assert_ldouble_ne_tol(s21_atan(-1.0), atan(-1.0), 0);
+  ck_assert_ldouble_ne_tol(s21_atan(0.0), atan(0.0), 0);
+  ck_assert_ldouble_ne_tol(s21_atan(1000.0), atan(1000.0), 0);
 }
 END_TEST
 
