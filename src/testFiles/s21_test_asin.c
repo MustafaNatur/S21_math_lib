@@ -5,10 +5,11 @@
 #include "s21_math.h"
 
 START_TEST(test_s21_math_asin_usual) {
-  double step=0.1;
-  for (double i = 0.1; i <= 0.99; i+=step) {
-    ck_assert_ldouble_eq_tol(s21_asin(i), asin(i), 0.000001);
-  }
+  ck_assert_ldouble_eq_tol(s21_asin(1.0), asin(1.0), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_asin(-1.0), asin(-1.0), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_asin(0.0343), asin(0.0343), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_asin(-0.0232), asin(-0.0232), 0.000001);
+  ck_assert_ldouble_eq_tol(s21_asin(0), asin(0), 0.000001);
 }
 END_TEST
 

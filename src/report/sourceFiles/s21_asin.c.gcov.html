@@ -31,13 +31,13 @@
             <td class="headerValue">tests.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">7</td>
-            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">6</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-12-28 21:34:40</td>
+            <td class="headerValue">2023-01-13 18:20:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -63,14 +63,14 @@
 <a name="1"><span class="lineNum">       1 </span>            : #include &quot;s21_math.h&quot;</a>
 <a name="2"><span class="lineNum">       2 </span>            : </a>
 <a name="3"><span class="lineNum">       3 </span>            : </a>
-<a name="4"><span class="lineNum">       4 </span><span class="lineCov">         21 : long double s21_asin(double x) {</span></a>
-<a name="5"><span class="lineNum">       5 </span><span class="lineCov">         21 :     double ans = 0;</span></a>
-<a name="6"><span class="lineNum">       6 </span><span class="lineCov">         21 :     if (x == 1.0 || x == -1.0) {</span></a>
-<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          1 :         ans = 1.57079633 * x;</span></a>
-<a name="8"><span class="lineNum">       8 </span><span class="lineCov">          1 :     } else {</span></a>
-<a name="9"><span class="lineNum">       9 </span><span class="lineCov">         20 :         ans = s21_atan(1.0/s21_sqrt(1 - x*x));</span></a>
+<a name="4"><span class="lineNum">       4 </span><span class="lineCov">          5 : long double s21_asin(double x) {</span></a>
+<a name="5"><span class="lineNum">       5 </span><span class="lineCov">          5 :     double ans = 0;</span></a>
+<a name="6"><span class="lineNum">       6 </span><span class="lineCov">          5 :     if (x == 1.0 || x == -1.0) {</span></a>
+<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          2 :         ans = 1.57079633 * x;</span></a>
+<a name="8"><span class="lineNum">       8 </span>            :     } else {</a>
+<a name="9"><span class="lineNum">       9 </span><span class="lineCov">          3 :         ans = s21_atan(x/s21_sqrt(1 - x*x));</span></a>
 <a name="10"><span class="lineNum">      10 </span>            :     }</a>
-<a name="11"><span class="lineNum">      11 </span><span class="lineCov">         21 :     return ans;</span></a>
+<a name="11"><span class="lineNum">      11 </span><span class="lineCov">          5 :     return ans;</span></a>
 <a name="12"><span class="lineNum">      12 </span>            : }</a>
 </pre>
       </td>
