@@ -1,12 +1,78 @@
-FLAG = -Wall -Wextra -Werror
+#!/bin/bash
+FLAGS=-Wall -Wextra -Werror
+CC=gcc
+FUNC_FILES_C=sourceFiles/*.c
+FUNC_FILES_O=*.o
+CHECKFLAGS=$(shell pkg-config --cflags --libs check)
+GCOVFLAGS=-fprofile-arcs -ftest-coverage
+LIBNAME=s21_math.a
+GLFLAGS=--coverage
+GCOVFLAGS=-fprofile-arcs -ftest-coverage
+filesArray=("s21_test_abs" "21_test_acos" "s21_test_asin" "s21_test_atan" "s21_test_ceil" "s21_test_cos" "s21_test_exp" "s21_test_fabs" "s21_test_floor" "s21_test_fmod" "s21_test_log" "s21_test_pow" "s21_test_sin" "s21_test_sqrt" "s21_test_tan")
+sourceFilesArray=$(ls sourceFiles)
 
-rebuild: 
+all: clean build_object_files build_library build_all_tests gen_html
+	open report/index.html
 	make clean
-	make s21_math
 
-s21_math: s21_abs.c s21_ceil.c s21_exp.c s21_fabs.c s21_factorial.c s21_floor.c s21_fmod.c s21_log.c s21_math_loraleec.c s21_pow.c s21_sin.c s21_sqrt.c 
-	gcc s21_abs.c s21_ceil.c s21_exp.c s21_fabs.c s21_factorial.c s21_floor.c s21_fmod.c s21_log.c s21_math_loraleec.c s21_pow.c s21_sin.c s21_sqrt.c  -o s21_math
+build_object_files:
+	$(CC) $(FLAGS) $(GCOVFLAGS) $(GLFLAGS) -c $(FUNC_FILES_C)
+
+build_library:
+	ar rcs $(LIBNAME) $(FUNC_FILES_O)
+
+build_all_tests:
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_abs.c -L. s21_math.a  -o s21_test_abs
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_acos.c -L. s21_math.a  -o s21_test_acos
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_asin.c -L. s21_math.a  -o s21_test_asin
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_atan.c -L. s21_math.a  -o s21_test_atan
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_ceil.c -L. s21_math.a  -o s21_test_ceil
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_cos.c -L. s21_math.a  -o s21_test_cos
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_exp.c -L. s21_math.a  -o s21_test_exp
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_fabs.c -L. s21_math.a  -o s21_test_fabs
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_floor.c -L. s21_math.a  -o s21_test_floor
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_fmod.c -L. s21_math.a  -o s21_test_fmod
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_log.c -L. s21_math.a  -o s21_test_log
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_pow.c -L. s21_math.a  -o s21_test_pow
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_sin.c -L. s21_math.a  -o s21_test_sin
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_sqrt.c -L. s21_math.a  -o s21_test_sqrt
+	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_tan.c -L. s21_math.a  -o s21_test_tan
+	
+
+gen_html:
+	
+	./s21_test_acos
+	./s21_test_asin
+	./s21_test_cos
+	./s21_test_log
+	./s21_test_exp
+	./s21_test_fmod
+	./s21_test_abs
+	./s21_test_pow
+	./s21_test_abs
+	./s21_test_ceil
+	./s21_test_atan
+	./s21_test_fabs
+	./s21_test_floor
+	./s21_test_fmod
+	./s21_test_sin
+	./s21_test_sqrt
+	./s21_test_tan
+	
+	
+	
+	lcov -o tests.info -c -d .  
+	genhtml -o report tests.info
 
 clean:
-	rm -f s21_math
+	rm -rf *.o
+	rm -rf *.gcno
+	rm -rf *.gcov
+	rm -rf *.gcda
+	rm -rf *.a
+	rm -rf *.info
+	rm -rf s21*
 
+rebuild:
+	make clean
+	make
