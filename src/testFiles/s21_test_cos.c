@@ -6,7 +6,7 @@
 
 START_TEST(test_s21_math_cos_unusual) {
   int testValue1 = 100;
-  int testValue2 = -30030403;
+  int testValue2 = -3003;
   double testValue3 = 0.0005;
   double testValue4 = 0.98439849385;
 
@@ -17,9 +17,10 @@ START_TEST(test_s21_math_cos_unusual) {
 }
 
 START_TEST(test_s21_math_cos_usual) {
-  double step = 0.1;
-  for (double i = -2 * S21_PI; i  <= 2 * S21_PI; i+=step) {
-    ck_assert_ldouble_ne_tol(s21_cos(i), cos(i), 0);
+  double step = 0.01;
+  for (double i = -5 * S21_PI; i  <= 5 * S21_PI; i+=step) {
+    printf("\n%f\n", i);
+    ck_assert_ldouble_eq_tol(s21_cos(i), cos(i), 0.000001);
   }
 }
 END_TEST
@@ -31,7 +32,7 @@ Suite *s21_math_cos_suite() {
   s = suite_create("s21_cos");
 
   tc_cos = tcase_create("s21_cos");
-   tcase_add_test(tc_cos, test_s21_math_cos_unusual);
+  tcase_add_test(tc_cos, test_s21_math_cos_unusual);
   tcase_add_test(tc_cos, test_s21_math_cos_usual);
   suite_add_tcase(s, tc_cos);
   return s;

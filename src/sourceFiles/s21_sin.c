@@ -4,7 +4,6 @@ long double s21_sin(double x) {
     while (s21_fabs(x) - 2 * S21_PI > 0) {
       x+=2*S21_PI * x/s21_fabs(x)*-1;
     }
-  printf("%f\n", x);
   long double result = 0;
   int sign = 1;
   double xx = x * x;
