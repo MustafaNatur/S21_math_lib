@@ -41,6 +41,7 @@ build_all_tests:
 
 gen_html:
 	
+	./s21_test_acos
 	./s21_test_asin
 	./s21_test_cos
 	./s21_test_log
@@ -57,7 +58,7 @@ gen_html:
 	./s21_test_sin
 	./s21_test_sqrt
 	./s21_test_tan
-	#./s21_test_acos
+	
 	
 	
 	lcov -o tests.info -c -d .  
