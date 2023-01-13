@@ -5,9 +5,11 @@
 #include "s21_math.h"
 
 START_TEST(test_s21_math_atan_usual) {
-  for (double i = -10.0; i < 10.0; i += 0.1) {
-    ck_assert_int_ne_tol(s21_atan(i), atan(i));
-  }
+  ck_assert_ldouble_eq_tol(s21_atan(1.0), atan(1.0), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_atan(0.1), atan(0.1), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_atan(-1.0), atan(-1.0), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_atan(0.0), atan(0.0), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_atan(1000.0), atan(1000.0), 1e-6);
 }
 END_TEST
 

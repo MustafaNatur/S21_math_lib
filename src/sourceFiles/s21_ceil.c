@@ -1,8 +1,9 @@
 #include "s21_math.h"
 
 long double s21_ceil(double x) {
-  if ((int)x != x) {
-    x = (int)x + 1;
+  long double ceil_res = (long long int)x;
+  if (ceil_res > 0 && x != ceil_res) {
+    ceil_res += 1;
   }
-  return x;
+  return ceil_res;
 }

@@ -4,16 +4,25 @@
 
 #include "s21_math.h"
 
-START_TEST(test_s21_math_sin) {
-  int testValue1 = 100;
-  int testValue2 = -30030403;
-  int testValue3 = 0.0005;
-  int testValue4 = 0.98439849385;
+START_TEST(test_s21_math_sin_usual) {
+  double step = 0.05;
+  for (double i = -5 * S21_PI; i <= 5 * S21_PI; i += step) {
+    ck_assert_ldouble_eq_tol(s21_sin(i), sin(i), 1e-6);
+  }
+}
+END_TEST
 
-  ck_assert_ldouble_ne_tol(s21_sin(testValue1), sin(testValue1), 0);
-  ck_assert_ldouble_ne_tol(s21_sin(testValue2), sin(testValue2), 0);
-  ck_assert_ldouble_ne_tol(s21_sin(testValue3), sin(testValue3), 0);
-  ck_assert_ldouble_ne_tol(s21_sin(testValue4), sin(testValue4), 0);
+START_TEST(test_s21_math_sin_unusual) {
+  int testValue1 = 1000;
+  int testValue2 = -30000;
+  double testValue3 = 0.0005;
+  double testValue4 = 0.98439849385;
+  double step = 0.1;
+
+  ck_assert_ldouble_eq_tol(s21_sin(testValue1), sin(testValue1), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_sin(testValue2), sin(testValue2), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_sin(testValue3), sin(testValue3), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_sin(testValue4), sin(testValue4), 1e-6);
 }
 END_TEST
 
@@ -24,7 +33,8 @@ Suite *s21_math_sin_suite() {
   s = suite_create("s21_sin");
 
   tc_sin = tcase_create("s21_sin");
-  tcase_add_test(tc_sin, test_s21_math_sin);
+  tcase_add_test(tc_sin, test_s21_math_sin_usual);
+  tcase_add_test(tc_sin, test_s21_math_sin_unusual);
   suite_add_tcase(s, tc_sin);
   return s;
 }

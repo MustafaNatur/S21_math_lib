@@ -6,14 +6,14 @@
 
 START_TEST(test_s21_math_tan) {
   int testValue1 = 1000;
-  int testValue2 = -30030403;
-  int testValue3 = S21_PI / 2;
-  int testValue4 = 3 * S21_PI / 2;
+  int testValue2 = -3003;
+  double testValue3 = 0.0005;
+  double testValue4 = 0.98439849385;
 
-  ck_assert_ldouble_ne_tol(s21_tan(testValue1), tan(testValue1), 0);
-  ck_assert_ldouble_ne_tol(s21_tan(testValue2), tan(testValue2), 0);
-  ck_assert_ldouble_ne_tol(s21_tan(testValue3), tan(testValue3), 0);
-  ck_assert_ldouble_ne_tol(s21_tan(testValue4), tan(testValue4), 0);
+  ck_assert_ldouble_eq_tol(s21_tan(testValue1), tan(testValue1), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_tan(testValue2), tan(testValue2), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_tan(testValue3), tan(testValue3), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_tan(testValue4), tan(testValue4), 1e-6);
 }
 END_TEST
 

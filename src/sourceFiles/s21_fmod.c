@@ -8,7 +8,7 @@ long double s21_fmod(double x, double y) {
   } else if (y < 0) {
     x = 0;
   } else if (y == 0) {
-    x = NAN;
+    x = S21_NAN;
   }
   return x;
 }
