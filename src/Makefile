@@ -11,7 +11,9 @@ GCOVFLAGS=-fprofile-arcs -ftest-coverage
 filesArray=("s21_test_abs" "21_test_acos" "s21_test_asin" "s21_test_atan" "s21_test_ceil" "s21_test_cos" "s21_test_exp" "s21_test_fabs" "s21_test_floor" "s21_test_fmod" "s21_test_log" "s21_test_pow" "s21_test_sin" "s21_test_sqrt" "s21_test_tan")
 sourceFilesArray=$(ls sourceFiles)
 
-all: clean build_object_files build_library test gen_html
+all: s21_math.a
+
+peer: clean build_object_files build_library test gen_html
 	open report/index.html
 	make clean
 
@@ -21,9 +23,12 @@ build_object_files:
 build_library:
 	ar rcs $(LIBNAME) $(FUNC_FILES_O)
 
-s21_math.a: clean build_object_files build_library
+s21_math.a:
+	$(CC) $(FLAGS) -c $(FUNC_FILES_C)
+	make build_library
+	rm -rf *.o
 
-test:
+test: s21_math.a
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_abs.c -L. s21_math.a  -o s21_test_abs
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_acos.c -L. s21_math.a  -o s21_test_acos
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_asin.c -L. s21_math.a  -o s21_test_asin
@@ -39,7 +44,7 @@ test:
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_sin.c -L. s21_math.a  -o s21_test_sin
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_sqrt.c -L. s21_math.a  -o s21_test_sqrt
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_tan.c -L. s21_math.a  -o s21_test_tan
-	
+
 start_tests:
 	./s21_test_acos
 	./s21_test_asin
@@ -57,9 +62,11 @@ start_tests:
 	./s21_test_sqrt
 	./s21_test_tan
 
-gcov_report: 
+gcov_report: clean build_object_files build_library test start_tests
 	lcov -o tests.info -c -d .  
 	genhtml -o report tests.info
+	open report/index.html
+	make clean
 
 gen_html: start_tests gcov_report
 	
