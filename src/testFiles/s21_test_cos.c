@@ -9,11 +9,19 @@ START_TEST(test_s21_math_cos_unusual) {
   int testValue2 = -3003;
   double testValue3 = 0.0005;
   double testValue4 = 0.98439849385;
+  double testValue5 = S21_PI;
+  double testValue6 = -S21_PI;
+  double testValue7 = S21_PI / 2;
+  double testValue8 = -S21_PI / 2;
 
   ck_assert_ldouble_eq_tol(s21_cos(testValue1), cos(testValue1), 1e-6);
   ck_assert_ldouble_eq_tol(s21_cos(testValue2), cos(testValue2), 1e-6);
   ck_assert_ldouble_eq_tol(s21_cos(testValue3), cos(testValue3), 1e-6);
   ck_assert_ldouble_eq_tol(s21_cos(testValue4), cos(testValue4), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_cos(testValue5), cos(testValue5), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_cos(testValue6), cos(testValue6), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_cos(testValue7), cos(testValue7), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_cos(testValue8), cos(testValue8), 1e-6);
 }
 
 START_TEST(test_s21_math_cos_usual) {

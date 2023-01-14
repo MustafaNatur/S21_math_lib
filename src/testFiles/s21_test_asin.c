@@ -7,9 +7,12 @@
 START_TEST(test_s21_math_asin_usual) {
   ck_assert_ldouble_eq_tol(s21_asin(1.0), asin(1.0), 1e-6);
   ck_assert_ldouble_eq_tol(s21_asin(-1.0), asin(-1.0), 1e-6);
-  ck_assert_ldouble_eq_tol(s21_asin(0.0343), asin(0.0343), 1e-6);
-  ck_assert_ldouble_eq_tol(s21_asin(-0.0232), asin(-0.0232), 1e-6);
-  ck_assert_ldouble_eq_tol(s21_asin(0), asin(0), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_asin(0.0), asin(0.0), 1e-6);
+
+  ck_assert_ldouble_eq_tol(s21_asin(0.23234), asin(0.23234), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_asin(-0.23234), asin(-0.23234), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_asin(0.0002), asin(0.0002), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_asin(-0.0002), asin(-0.0002), 1e-6);
 }
 END_TEST
 

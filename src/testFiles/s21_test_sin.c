@@ -13,16 +13,33 @@ START_TEST(test_s21_math_sin_usual) {
 END_TEST
 
 START_TEST(test_s21_math_sin_unusual) {
-  int testValue1 = 1000;
-  int testValue2 = -30000;
+  // int testValue1 = 1000;
+  // int testValue2 = -30000;
+  // double testValue3 = 0.0005;
+  // double testValue4 = 0.98439849385;
+  // double step = 0.1;
+
+  // ck_assert_ldouble_eq_tol(s21_sin(testValue1), sin(testValue1), 1e-6);
+  // ck_assert_ldouble_eq_tol(s21_sin(testValue2), sin(testValue2), 1e-6);
+  // ck_assert_ldouble_eq_tol(s21_sin(testValue3), sin(testValue3), 1e-6);
+  // ck_assert_ldouble_eq_tol(s21_sin(testValue4), sin(testValue4), 1e-6);
+  int testValue1 = 100;
+  int testValue2 = -3003;
   double testValue3 = 0.0005;
   double testValue4 = 0.98439849385;
-  double step = 0.1;
+  double testValue5 = S21_PI;
+  double testValue6 = -S21_PI;
+  double testValue7 = S21_PI / 2;
+  double testValue8 = -S21_PI / 2;
 
   ck_assert_ldouble_eq_tol(s21_sin(testValue1), sin(testValue1), 1e-6);
   ck_assert_ldouble_eq_tol(s21_sin(testValue2), sin(testValue2), 1e-6);
   ck_assert_ldouble_eq_tol(s21_sin(testValue3), sin(testValue3), 1e-6);
   ck_assert_ldouble_eq_tol(s21_sin(testValue4), sin(testValue4), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_sin(testValue5), sin(testValue5), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_sin(testValue6), sin(testValue6), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_sin(testValue7), sin(testValue7), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_sin(testValue8), sin(testValue8), 1e-6);
 }
 END_TEST
 

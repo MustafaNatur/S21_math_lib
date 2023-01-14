@@ -9,11 +9,15 @@ START_TEST(test_s21_math_tan) {
   int testValue2 = -3003;
   double testValue3 = 0.0005;
   double testValue4 = 0.98439849385;
+  double testValue5 = S21_PI;
+  // double testValue6 = S21_PI / 2;
 
   ck_assert_ldouble_eq_tol(s21_tan(testValue1), tan(testValue1), 1e-6);
   ck_assert_ldouble_eq_tol(s21_tan(testValue2), tan(testValue2), 1e-6);
   ck_assert_ldouble_eq_tol(s21_tan(testValue3), tan(testValue3), 1e-6);
   ck_assert_ldouble_eq_tol(s21_tan(testValue4), tan(testValue4), 1e-6);
+  ck_assert_ldouble_eq_tol(s21_tan(testValue5), tan(testValue5), 1e-6);
+  // ck_assert_ldouble_eq_tol(s21_tan(testValue6), tan(testValue6), 1e-6);
 }
 END_TEST
 
