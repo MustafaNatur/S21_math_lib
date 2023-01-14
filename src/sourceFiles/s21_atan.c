@@ -3,7 +3,6 @@
 #define EPS 500
 long double s21_atan(double x) {
   long double result = 0;
-  printf("%f\n", x);
   if (x == 0.0) {
     result = 0.0;
   } else if (x == 1.0 || x == -1.0) {

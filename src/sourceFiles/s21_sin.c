@@ -1,4 +1,5 @@
 #include "s21_math.h"
+
 long double s21_sin(double x) {
   while (s21_fabs(x) - 2 * S21_PI > 0) {
     x += 2 * S21_PI * x / s21_fabs(x) * -1;
