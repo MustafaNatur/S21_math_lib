@@ -10,7 +10,7 @@ long double s21_exp(double x) {
     T_series = S21_NAN;
   } else if (isPOS_INF(x)) {
     T_series = POS_INF;
-  } else if (isNEG_INF(x)) {
+  } else if (isNEG_INF(x) || x < -14.5) {
     T_series = 0.0;
   } else {
     while (s21_fabs(step) > S21_EPS && flag_max == 0) {

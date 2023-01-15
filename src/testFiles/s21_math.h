@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include <stdio.h>
-#define S21_EPS 1e-100
+#define S21_EPS 1e-200
 #define S21_PI 3.1415926535897932
 #define S21_EXP 2.7182818284590452
 #define S21_MAX 1e100

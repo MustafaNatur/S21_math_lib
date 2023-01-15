@@ -6,21 +6,24 @@
 
 START_TEST(test_s21_math_ceil_usual) {
   double testValue1 = -5.7;
-  double testValue2 = 5.1;
+  double testValue2 = -0.1;
   double testValue3 = 12.4;
   ck_assert_ldouble_eq_tol(s21_ceil(testValue1), ceil(testValue1), 1e-6);
   ck_assert_ldouble_eq_tol(s21_ceil(testValue2), ceil(testValue2), 1e-6);
   ck_assert_ldouble_eq_tol(s21_ceil(testValue3), ceil(testValue3), 1e-6);
+  for (double i = -1.01; i <= 1.01; i += 0.01) {
+    ck_assert_ldouble_eq_tol(s21_ceil(i), ceil(i), 1e-6);
+  }
 }
 END_TEST
 
 START_TEST(test_s21_math_ceil_unusual) {
-  double testValue1 = -10.45934;
-  double testValue2 = 10.1;
-  double testValue3 = 0.0;
-  ck_assert_ldouble_eq_tol(s21_ceil(testValue1), ceil(testValue1), 1e-6);
-  ck_assert_ldouble_eq_tol(s21_ceil(testValue2), ceil(testValue2), 1e-6);
-  ck_assert_ldouble_eq_tol(s21_ceil(testValue3), ceil(testValue3), 1e-6);
+  double testValue1 = POS_INF;
+  double testValue2 = NEG_INF;
+  double testValue3 = S21_NAN;
+  ck_assert_double_infinite(s21_ceil(testValue1));
+  ck_assert_double_infinite(s21_ceil(testValue2));
+  ck_assert_double_nan(s21_ceil(testValue3));
 }
 END_TEST
 

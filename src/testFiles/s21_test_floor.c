@@ -11,16 +11,19 @@ START_TEST(test_s21_math_floor_usual) {
   ck_assert_ldouble_eq_tol(s21_floor(testValue1), floor(testValue1), 1e-6);
   ck_assert_ldouble_eq_tol(s21_floor(testValue2), floor(testValue2), 1e-6);
   ck_assert_ldouble_eq_tol(s21_floor(testValue3), floor(testValue3), 1e-6);
+  for (double i = -2.01; i <= 1.01; i += 0.01) {
+    ck_assert_ldouble_eq_tol(s21_floor(i), floor(i), 1e-6);
+  }
 }
 END_TEST
 
 START_TEST(test_s21_math_floor_unusual) {
-  double testValue1 = -10.45934;
-  double testValue2 = 10.1;
-  double testValue3 = 0;
-  ck_assert_ldouble_eq_tol(s21_floor(testValue1), floor(testValue1), 1e-6);
-  ck_assert_ldouble_eq_tol(s21_floor(testValue2), floor(testValue2), 1e-6);
-  ck_assert_ldouble_eq_tol(s21_floor(testValue3), floor(testValue3), 1e-6);
+  double testValue1 = POS_INF;
+  double testValue2 = NEG_INF;
+  double testValue3 = S21_NAN;
+  ck_assert_double_infinite(s21_floor(testValue1));
+  ck_assert_double_infinite(s21_floor(testValue2));
+  ck_assert_double_nan(s21_floor(testValue3));
 }
 END_TEST
 

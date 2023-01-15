@@ -13,9 +13,7 @@ sourceFilesArray=$(ls sourceFiles)
 
 all: s21_math.a
 
-peer: clean build_object_files build_library test gen_html
-	open report/index.html
-	make clean
+peer: gcov_report
 
 build_object_files:
 	$(CC) $(FLAGS) $(GCOVFLAGS) $(GLFLAGS) -c $(FUNC_FILES_C)
@@ -25,6 +23,7 @@ build_library:
 
 s21_math.a:
 	$(CC) $(FLAGS) -c $(FUNC_FILES_C)
+	cp testFiles/s21_math.h s21_math.h
 	make build_library
 	rm -rf *.o
 
@@ -44,7 +43,8 @@ test: s21_math.a
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_sin.c -L. s21_math.a  -o s21_test_sin
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_sqrt.c -L. s21_math.a  -o s21_test_sqrt
 	$(CC) $(CHECKFLAGS) $(GLFLAGS) $(GCOVFLAGS) testFiles/s21_test_tan.c -L. s21_math.a  -o s21_test_tan
-
+	make start_tests
+	
 start_tests:
 	./s21_test_acos
 	./s21_test_asin
@@ -62,7 +62,7 @@ start_tests:
 	./s21_test_sqrt
 	./s21_test_tan
 
-gcov_report: clean build_object_files build_library test start_tests
+gcov_report: clean build_object_files build_library test
 	lcov -o tests.info -c -d .  
 	genhtml -o report tests.info
 	open report/index.html
